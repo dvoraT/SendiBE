@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SENDITModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDER_ID" Type="Int32" />
+    <Property Name="USERID" Type="Int32" />
+    <Property Name="ADRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="F_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="L_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ORDER" Relationship="Self.FK__CUSTOMER__ORDER___1FCDBCEB" FromRole="CUSTOMER" ToRole="ORDER" />
+    <NavigationProperty Name="USER" Relationship="Self.FK__CUSTOMER__USERID__20C1E124" FromRole="CUSTOMER" ToRole="USER" />
+    <NavigationProperty Name="ORDER1" Relationship="Self.FK__ORDER__CUSTOMER___21B6055D" FromRole="CUSTOMER" ToRole="ORDER" />
+  </EntityType>
+  <EntityType Name="DELIVERY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROUTE_ID" Type="Int32" />
+    <Property Name="STATUS_D" Type="Boolean" />
+    <Property Name="F_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="L_NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PHONE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="NUM_HOURS" Type="Int32" />
+    <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ROUTE" Relationship="Self.FK__DELIVERY__ROUTE___1A14E395" FromRole="DELIVERY" ToRole="ROUTE" />
+    <NavigationProperty Name="ROUTE1" Relationship="Self.FK__ROUTE__DELIVERY___24927208" FromRole="DELIVERY" ToRole="ROUTE" />
+  </EntityType>
+  <EntityType Name="ORDER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PACKAGE_NUMBER" Type="Guid" />
+    <Property Name="ORDER_STATUS" Type="Int32" />
+    <Property Name="BOXES_AMOUNT" Type="Int32" />
+    <Property Name="DEADLINE_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CUSTOMER_ID" Type="Int32" />
+    <Property Name="ROUTE_ID" Type="Int32" />
+    <NavigationProperty Name="CUSTOMER" Relationship="Self.FK__CUSTOMER__ORDER___1FCDBCEB" FromRole="ORDER" ToRole="CUSTOMER" />
+    <NavigationProperty Name="CUSTOMER1" Relationship="Self.FK__ORDER__CUSTOMER___21B6055D" FromRole="ORDER" ToRole="CUSTOMER" />
+    <NavigationProperty Name="ROUTE" Relationship="Self.FK__ORDER__ROUTE_ID__22AA2996" FromRole="ORDER" ToRole="ROUTE" />
+    <NavigationProperty Name="ROUTE1" Relationship="Self.FK__ORDER__ROUTE_ID__239E4DCF" FromRole="ORDER" ToRole="ROUTE" />
+    <NavigationProperty Name="ROUTE2" Relationship="Self.FK__ROUTE__ORDER_ID__173876EA" FromRole="ORDER" ToRole="ROUTE" />
+  </EntityType>
+  <EntityType Name="PACKAGE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NUMBER" Type="Guid" />
+    <Property Name="ORDERID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ROUTE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDER_ID" Type="Int32" />
+    <Property Name="DELIVERY_ID" Type="Int32" />
+    <NavigationProperty Name="DELIVERY" Relationship="Self.FK__DELIVERY__ROUTE___1A14E395" FromRole="ROUTE" ToRole="DELIVERY" />
+    <NavigationProperty Name="DELIVERY1" Relationship="Self.FK__ROUTE__DELIVERY___24927208" FromRole="ROUTE" ToRole="DELIVERY" />
+    <NavigationProperty Name="ORDER" Relationship="Self.FK__ORDER__ROUTE_ID__22AA2996" FromRole="ROUTE" ToRole="ORDER" />
+    <NavigationProperty Name="ORDER1" Relationship="Self.FK__ORDER__ROUTE_ID__239E4DCF" FromRole="ROUTE" ToRole="ORDER" />
+    <NavigationProperty Name="ORDER2" Relationship="Self.FK__ROUTE__ORDER_ID__173876EA" FromRole="ROUTE" ToRole="ORDER" />
+    <NavigationProperty Name="USER" Relationship="Self.FK__USER__ROUTE_ID__1CF15040" FromRole="ROUTE" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROUTE_ID" Type="Int32" />
+    <Property Name="USERNAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="USER_PASSWORD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ADRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CUSTOMER" Relationship="Self.FK__CUSTOMER__USERID__20C1E124" FromRole="USER" ToRole="CUSTOMER" />
+    <NavigationProperty Name="ROUTE" Relationship="Self.FK__USER__ROUTE_ID__1CF15040" FromRole="USER" ToRole="ROUTE" />
+  </EntityType>
+  <Association Name="FK__CUSTOMER__ORDER___1FCDBCEB">
+    <End Role="ORDER" Type="Self.ORDER" Multiplicity="0..1" />
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="ORDER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CUSTOMER__USERID__20C1E124">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CUSTOMER">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ORDER__CUSTOMER___21B6055D">
+    <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+    <End Role="ORDER" Type="Self.ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUSTOMER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORDER">
+        <PropertyRef Name="CUSTOMER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DELIVERY__ROUTE___1A14E395">
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="0..1" />
+    <End Role="DELIVERY" Type="Self.DELIVERY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROUTE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DELIVERY">
+        <PropertyRef Name="ROUTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ROUTE__DELIVERY___24927208">
+    <End Role="DELIVERY" Type="Self.DELIVERY" Multiplicity="0..1" />
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DELIVERY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ROUTE">
+        <PropertyRef Name="DELIVERY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ORDER__ROUTE_ID__22AA2996">
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="1" />
+    <End Role="ORDER" Type="Self.ORDER" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ROUTE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORDER">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ORDER__ROUTE_ID__239E4DCF">
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="0..1" />
+    <End Role="ORDER" Type="Self.ORDER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROUTE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ORDER">
+        <PropertyRef Name="ROUTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ROUTE__ORDER_ID__173876EA">
+    <End Role="ORDER" Type="Self.ORDER" Multiplicity="0..1" />
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ORDER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ROUTE">
+        <PropertyRef Name="ORDER_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__USER__ROUTE_ID__1CF15040">
+    <End Role="ROUTE" Type="Self.ROUTE" Multiplicity="0..1" />
+    <End Role="USER" Type="Self.USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROUTE">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="USER">
+        <PropertyRef Name="ROUTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SENDITEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" />
+    <EntitySet Name="DELIVERY" EntityType="Self.DELIVERY" />
+    <EntitySet Name="ORDER" EntityType="Self.ORDER" />
+    <EntitySet Name="PACKAGE" EntityType="Self.PACKAGE" />
+    <EntitySet Name="ROUTE" EntityType="Self.ROUTE" />
+    <EntitySet Name="USER" EntityType="Self.USER" />
+    <AssociationSet Name="FK__CUSTOMER__ORDER___1FCDBCEB" Association="Self.FK__CUSTOMER__ORDER___1FCDBCEB">
+      <End Role="ORDER" EntitySet="ORDER" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CUSTOMER__USERID__20C1E124" Association="Self.FK__CUSTOMER__USERID__20C1E124">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ORDER__CUSTOMER___21B6055D" Association="Self.FK__ORDER__CUSTOMER___21B6055D">
+      <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+      <End Role="ORDER" EntitySet="ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DELIVERY__ROUTE___1A14E395" Association="Self.FK__DELIVERY__ROUTE___1A14E395">
+      <End Role="ROUTE" EntitySet="ROUTE" />
+      <End Role="DELIVERY" EntitySet="DELIVERY" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ROUTE__DELIVERY___24927208" Association="Self.FK__ROUTE__DELIVERY___24927208">
+      <End Role="DELIVERY" EntitySet="DELIVERY" />
+      <End Role="ROUTE" EntitySet="ROUTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ORDER__ROUTE_ID__22AA2996" Association="Self.FK__ORDER__ROUTE_ID__22AA2996">
+      <End Role="ROUTE" EntitySet="ROUTE" />
+      <End Role="ORDER" EntitySet="ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ORDER__ROUTE_ID__239E4DCF" Association="Self.FK__ORDER__ROUTE_ID__239E4DCF">
+      <End Role="ROUTE" EntitySet="ROUTE" />
+      <End Role="ORDER" EntitySet="ORDER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ROUTE__ORDER_ID__173876EA" Association="Self.FK__ROUTE__ORDER_ID__173876EA">
+      <End Role="ORDER" EntitySet="ORDER" />
+      <End Role="ROUTE" EntitySet="ROUTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__USER__ROUTE_ID__1CF15040" Association="Self.FK__USER__ROUTE_ID__1CF15040">
+      <End Role="ROUTE" EntitySet="ROUTE" />
+      <End Role="USER" EntitySet="USER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

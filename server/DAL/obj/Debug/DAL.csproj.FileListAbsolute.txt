@@ -1,0 +1,12 @@
+D:\פרוייקט גמר\server\DAL\bin\Debug\DAL.dll.config
+D:\פרוייקט גמר\server\DAL\bin\Debug\DAL.dll
+D:\פרוייקט גמר\server\DAL\bin\Debug\DAL.pdb
+D:\פרוייקט גמר\server\DAL\bin\Debug\EntityFramework.dll
+D:\פרוייקט גמר\server\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\פרוייקט גמר\server\DAL\bin\Debug\EntityFramework.xml
+D:\פרוייקט גמר\server\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\פרוייקט גמר\server\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\פרוייקט גמר\server\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\פרוייקט גמר\server\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\פרוייקט גמר\server\DAL\obj\Debug\DAL.dll
+D:\פרוייקט גמר\server\DAL\obj\Debug\DAL.pdb

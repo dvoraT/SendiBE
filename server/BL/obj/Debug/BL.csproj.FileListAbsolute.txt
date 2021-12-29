@@ -1,0 +1,14 @@
+D:\פרוייקט גמר\server\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+D:\פרוייקט גמר\server\BL\bin\Debug\BL.dll
+D:\פרוייקט גמר\server\BL\bin\Debug\BL.pdb
+D:\פרוייקט גמר\server\BL\bin\Debug\DAL.dll
+D:\פרוייקט גמר\server\BL\bin\Debug\Entities.dll
+D:\פרוייקט גמר\server\BL\bin\Debug\EntityFramework.dll
+D:\פרוייקט גמר\server\BL\bin\Debug\DAL.pdb
+D:\פרוייקט גמר\server\BL\bin\Debug\DAL.dll.config
+D:\פרוייקט גמר\server\BL\bin\Debug\Entities.pdb
+D:\פרוייקט גמר\server\BL\bin\Debug\EntityFramework.xml
+D:\פרוייקט גמר\server\BL\obj\Debug\BL.csprojAssemblyReference.cache
+D:\פרוייקט גמר\server\BL\obj\Debug\BL.csproj.CopyComplete
+D:\פרוייקט גמר\server\BL\obj\Debug\BL.dll
+D:\פרוייקט גמר\server\BL\obj\Debug\BL.pdb

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ab0066405da41d29db4a612487ebc70" Name="Diagram1">
+        <EntityTypeShape EntityType="SENDITModel.CUSTOMER" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SENDITModel.DELIVERY" Width="1.5" PointX="9.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SENDITModel.ORDER" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SENDITModel.PACKAGE" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SENDITModel.ROUTE" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SENDITModel.USER" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="SENDITModel.FK__CUSTOMER__ORDER___1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="SENDITModel.FK__CUSTOMER__USERID__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="SENDITModel.FK__ORDER__CUSTOMER___21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="SENDITModel.FK__DELIVERY__ROUTE___1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="SENDITModel.FK__ROUTE__DELIVERY___24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="SENDITModel.FK__ORDER__ROUTE_ID__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="SENDITModel.FK__ORDER__ROUTE_ID__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="SENDITModel.FK__ROUTE__ORDER_ID__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="SENDITModel.FK__USER__ROUTE_ID__1CF15040" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

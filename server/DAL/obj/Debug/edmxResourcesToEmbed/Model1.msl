@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SENDITModelStoreContainer" CdmEntityContainer="SENDITEntities">
+    <EntitySetMapping Name="CUSTOMER">
+      <EntityTypeMapping TypeName="SENDITModel.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="F_NAME" ColumnName="F_NAME" />
+          <ScalarProperty Name="L_NAME" ColumnName="L_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DELIVERY">
+      <EntityTypeMapping TypeName="SENDITModel.DELIVERY">
+        <MappingFragment StoreEntitySet="DELIVERY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+          <ScalarProperty Name="STATUS_D" ColumnName="STATUS_D" />
+          <ScalarProperty Name="F_NAME" ColumnName="F_NAME" />
+          <ScalarProperty Name="L_NAME" ColumnName="L_NAME" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="NUM_HOURS" ColumnName="NUM_HOURS" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDER">
+      <EntityTypeMapping TypeName="SENDITModel.ORDER">
+        <MappingFragment StoreEntitySet="ORDER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PACKAGE_NUMBER" ColumnName="PACKAGE_NUMBER" />
+          <ScalarProperty Name="ORDER_STATUS" ColumnName="ORDER_STATUS" />
+          <ScalarProperty Name="BOXES_AMOUNT" ColumnName="BOXES_AMOUNT" />
+          <ScalarProperty Name="DEADLINE_DATE" ColumnName="DEADLINE_DATE" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PACKAGE">
+      <EntityTypeMapping TypeName="SENDITModel.PACKAGE">
+        <MappingFragment StoreEntitySet="PACKAGE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+          <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROUTE">
+      <EntityTypeMapping TypeName="SENDITModel.ROUTE">
+        <MappingFragment StoreEntitySet="ROUTE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="DELIVERY_ID" ColumnName="DELIVERY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER">
+      <EntityTypeMapping TypeName="SENDITModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
