@@ -10,3 +10,15 @@ D:\פרוייקט גמר\server\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\פרוייקט גמר\server\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\פרוייקט גמר\server\DAL\obj\Debug\DAL.dll
 D:\פרוייקט גמר\server\DAL\obj\Debug\DAL.pdb
+C:\Users\9090\SendiBE\server\DAL\bin\Debug\DAL.dll.config
+C:\Users\9090\SendiBE\server\DAL\bin\Debug\DAL.dll
+C:\Users\9090\SendiBE\server\DAL\bin\Debug\DAL.pdb
+C:\Users\9090\SendiBE\server\DAL\bin\Debug\EntityFramework.dll
+C:\Users\9090\SendiBE\server\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\9090\SendiBE\server\DAL\bin\Debug\EntityFramework.xml
+C:\Users\9090\SendiBE\server\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\9090\SendiBE\server\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\9090\SendiBE\server\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\9090\SendiBE\server\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\9090\SendiBE\server\DAL\obj\Debug\DAL.dll
+C:\Users\9090\SendiBE\server\DAL\obj\Debug\DAL.pdb

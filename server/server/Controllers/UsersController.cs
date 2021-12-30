@@ -29,18 +29,12 @@ namespace server.Controllers
             }
         }
 
+
         [HttpGet]
-        [Route("A")]
-        public IHttpActionResult A(int u)
+        [Route("isUserExist/{userName}/{password}")]
+        public IHttpActionResult isUserExist(string userName, string password)
         {
-            try
-            {
-                return Ok(true);
-            }
-            catch (Exception)
-            {
-                return Ok(false);
-            }
+            return Ok(UserBL.isUserExist(userName, password));
         }
     }
 

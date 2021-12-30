@@ -15,5 +15,10 @@ namespace BL
             UserDAL.addUser(UserEntities.ConvertToDB(u));
        
         }
+
+        public static Boolean isUserExist(string userName, string password)
+        {
+            return UserDAL.getAll().Any(x => x.USERNAME == userName && x.USER_PASSWORD == password);
+        }
     }
 }
