@@ -25,6 +25,7 @@
     <Property Name="PHONE" Type="varchar" MaxLength="40" />
     <Property Name="NUM_HOURS" Type="int" />
     <Property Name="EMAIL" Type="varchar" MaxLength="40" />
+    <Property Name="ID_USER" Type="int" />
   </EntityType>
   <EntityType Name="ORDER">
     <Key>
@@ -88,6 +89,18 @@
       </Principal>
       <Dependent Role="CUSTOMER">
         <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DELIVERY__ID_USE__34C8D9D1">
+    <End Role="USER" Type="Self.USER" Multiplicity="0..1" />
+    <End Role="DELIVERY" Type="Self.DELIVERY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DELIVERY">
+        <PropertyRef Name="ID_USER" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -189,6 +202,10 @@
     <AssociationSet Name="FK__CUSTOMER__USERID__20C1E124" Association="Self.FK__CUSTOMER__USERID__20C1E124">
       <End Role="USER" EntitySet="USER" />
       <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DELIVERY__ID_USE__34C8D9D1" Association="Self.FK__DELIVERY__ID_USE__34C8D9D1">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="DELIVERY" EntitySet="DELIVERY" />
     </AssociationSet>
     <AssociationSet Name="FK__DELIVERY__ROUTE___1A14E395" Association="Self.FK__DELIVERY__ROUTE___1A14E395">
       <End Role="ROUTE" EntitySet="ROUTE" />

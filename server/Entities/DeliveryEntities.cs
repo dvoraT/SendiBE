@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class DeliveryEntities
+   public class DeliveryEntities
     {
         public int id { get; set; }
         public int? route_id { get; set; }
+        public int? user_id { get; set; }
         public bool? status_d { get; set; }
         public string f_name { get; set; }
         public string l_name { get; set; }
@@ -27,6 +28,7 @@ namespace Entities
             {
                 id = d.ID,
                 route_id = d.ROUTE_ID,
+                user_id=d.ID_USER,
                 status_d = d.STATUS_D,
                 f_name = d.F_NAME,
                 l_name = d.L_NAME,
@@ -44,6 +46,7 @@ namespace Entities
             {
                 ID = d.id,
                 ROUTE_ID = d.route_id,
+                ID_USER=d.user_id,
                 STATUS_D = d.status_d,
                 F_NAME = d.f_name,
                 L_NAME = d.l_name,

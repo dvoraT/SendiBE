@@ -18,6 +18,7 @@ namespace DAL
         public USER()
         {
             this.CUSTOMER = new HashSet<CUSTOMER>();
+            this.DELIVERY = new HashSet<DELIVERY>();
         }
     
         public int ID { get; set; }
@@ -32,5 +33,7 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CUSTOMER> CUSTOMER { get; set; }
         public virtual ROUTE ROUTE { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DELIVERY> DELIVERY { get; set; }
     }
 }

@@ -18,6 +18,7 @@
     <EntitySetMapping Name="DELIVERY">
       <EntityTypeMapping TypeName="SENDITModel.DELIVERY">
         <MappingFragment StoreEntitySet="DELIVERY">
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
           <ScalarProperty Name="STATUS_D" ColumnName="STATUS_D" />

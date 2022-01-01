@@ -20,5 +20,10 @@ namespace BL
         {
             return UserDAL.getAll().Any(x => x.USERNAME == userName && x.USER_PASSWORD == password);
         }
+
+        public static int? getUserId(string userName, string password)
+        {
+            return UserDAL.getUserId(userName, password);
+        }
     }
 }

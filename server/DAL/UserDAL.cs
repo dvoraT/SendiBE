@@ -21,5 +21,11 @@ namespace DAL
         {
             return db.USER.ToList();
         }
+
+        public static int? getUserId(string userName, string password)
+        {
+            USER currentUser = db.USER.First(x => x.USERNAME == userName && x.USER_PASSWORD == password);
+            return currentUser.ID;
+        }
     }
 }

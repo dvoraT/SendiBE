@@ -28,9 +28,11 @@ namespace DAL
         public string PHONE { get; set; }
         public Nullable<int> NUM_HOURS { get; set; }
         public string EMAIL { get; set; }
+        public Nullable<int> ID_USER { get; set; }
     
         public virtual ROUTE ROUTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ROUTE> ROUTE1 { get; set; }
+        public virtual USER USER { get; set; }
     }
 }

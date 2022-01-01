@@ -36,6 +36,13 @@ namespace server.Controllers
         {
             return Ok(UserBL.isUserExist(userName, password));
         }
+
+        [HttpGet]
+        [Route("getUserId/{userName}/{password}")]
+        public IHttpActionResult getUserId(string userName, string password)
+        {
+            return Ok(UserBL.getUserId(userName, password));
+        }
     }
 
 

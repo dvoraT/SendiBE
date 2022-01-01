@@ -30,6 +30,8 @@
     <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ROUTE" Relationship="Self.FK__DELIVERY__ROUTE___1A14E395" FromRole="DELIVERY" ToRole="ROUTE" />
     <NavigationProperty Name="ROUTE1" Relationship="Self.FK__ROUTE__DELIVERY___24927208" FromRole="DELIVERY" ToRole="ROUTE" />
+    <Property Name="ID_USER" Type="Int32" />
+    <NavigationProperty Name="USER" Relationship="SENDITModel.FK__DELIVERY__ID_USE__34C8D9D1" FromRole="DELIVERY" ToRole="USER" />
   </EntityType>
   <EntityType Name="ORDER">
     <Key>
@@ -84,6 +86,7 @@
     <Property Name="EMAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="CUSTOMER" Relationship="Self.FK__CUSTOMER__USERID__20C1E124" FromRole="USER" ToRole="CUSTOMER" />
     <NavigationProperty Name="ROUTE" Relationship="Self.FK__USER__ROUTE_ID__1CF15040" FromRole="USER" ToRole="ROUTE" />
+    <NavigationProperty Name="DELIVERY" Relationship="SENDITModel.FK__DELIVERY__ID_USE__34C8D9D1" FromRole="USER" ToRole="DELIVERY" />
   </EntityType>
   <Association Name="FK__CUSTOMER__ORDER___1FCDBCEB">
     <End Role="ORDER" Type="Self.ORDER" Multiplicity="0..1" />
@@ -236,5 +239,21 @@
       <End Role="ROUTE" EntitySet="ROUTE" />
       <End Role="USER" EntitySet="USER" />
     </AssociationSet>
+    <AssociationSet Name="FK__DELIVERY__ID_USE__34C8D9D1" Association="SENDITModel.FK__DELIVERY__ID_USE__34C8D9D1">
+      <End Role="USER" EntitySet="USER" />
+      <End Role="DELIVERY" EntitySet="DELIVERY" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK__DELIVERY__ID_USE__34C8D9D1">
+    <End Type="SENDITModel.USER" Role="USER" Multiplicity="0..1" />
+    <End Type="SENDITModel.DELIVERY" Role="DELIVERY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DELIVERY">
+        <PropertyRef Name="ID_USER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

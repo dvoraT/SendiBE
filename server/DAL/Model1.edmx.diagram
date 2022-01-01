@@ -20,6 +20,7 @@
         <AssociationConnector Association="SENDITModel.FK__ORDER__ROUTE_ID__239E4DCF" ManuallyRouted="false" />
         <AssociationConnector Association="SENDITModel.FK__ROUTE__ORDER_ID__173876EA" ManuallyRouted="false" />
         <AssociationConnector Association="SENDITModel.FK__USER__ROUTE_ID__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="SENDITModel.FK__DELIVERY__ID_USE__34C8D9D1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
