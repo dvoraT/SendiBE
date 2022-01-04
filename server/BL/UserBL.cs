@@ -10,20 +10,28 @@ namespace BL
 {
    public class UserBL
     {
+        //הוספה
         public static void addUser(UserEntities u)
         {
             UserDAL.addUser(UserEntities.ConvertToDB(u));
        
         }
-
-        public static Boolean isUserExist(string userName, string password)
+        //בדיקה האם משתמש קיים
+        public static UserEntities isUserExist(string userName, string password)
         {
-            return UserDAL.getAll().Any(x => x.USERNAME == userName && x.USER_PASSWORD == password);
+            List<UserEntities> lu =UserEntities.ConvertToListEntities( UserDAL.getAll());
+            return lu.FirstOrDefault(x => x.user_name == userName && x.user_password == password);
         }
-
+        //שליפת קוד של משתמש
         public static int? getUserId(string userName, string password)
         {
             return UserDAL.getUserId(userName, password);
+        }
+
+        //שליפת פרטי משתמש
+        public static UserEntities getDetails(int userID)
+        {
+            return UserEntities.ConvertToEntities(UserDAL.getDatails(userID));
         }
     }
 }

@@ -29,20 +29,32 @@ namespace server.Controllers
             }
         }
 
-
+        //בודק האם המשתמש קיים
         [HttpGet]
         [Route("isUserExist/{userName}/{password}")]
         public IHttpActionResult isUserExist(string userName, string password)
         {
-            return Ok(UserBL.isUserExist(userName, password));
+            var a = UserBL.isUserExist(userName, password);
+            return Ok(a);
         }
 
+        //שליפת קוד המשתמש
         [HttpGet]
         [Route("getUserId/{userName}/{password}")]
         public IHttpActionResult getUserId(string userName, string password)
         {
             return Ok(UserBL.getUserId(userName, password));
         }
+
+        //שליפת משתמש 
+        [HttpGet]
+        [Route("getUserDetails")]
+        public IHttpActionResult getUserDetails([FromBody]int userID)
+        {
+            return Ok(UserBL.getDetails(userID));
+        }
+
+
     }
 
 

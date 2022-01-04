@@ -34,5 +34,49 @@ namespace server.Controllers
                 // return Ok(false);
             }
         }
+
+
+        //מחיקת שליח
+        [HttpDelete]
+        [Route("deleteDelivery/{id}")]
+        public IHttpActionResult deleteDelivery(int id)
+        {
+            try
+            {
+                DliveryBL.deleteDelivery(id);
+                return Ok(true);
+            }
+
+            catch
+            {
+                return Ok(false);
+            }
+        }
+
+
+        //שליפת שליח לפי קוד
+        [HttpGet]
+        [Route("getDeliveryById/{id}")]
+        public IHttpActionResult getDeliveryById(int id)
+        {
+            return Ok(DliveryBL.getDeliveryById(id));
+        }
+
+        //עדכון שליח
+        [HttpPost]
+        [Route("updateDelivery")]
+        public IHttpActionResult updateDelivery(DeliveryEntities d)
+        {
+            try
+            {
+                DliveryBL.updateDelivery(d);
+                return Ok(true);
+            }
+
+            catch
+            {
+                return Ok(false);
+            }
+        }
     }
 }

@@ -20,6 +20,22 @@ namespace BL
         {
             DeliveyDal.addDelivery(DeliveryEntities.ConvertToDB(d));
         }
+        //מחיקה
+        public static void deleteDelivery(int id)
+        {
+            DeliveyDal.deleteDelivery(id);
+        }
+
+        //שליפת שליח לפי קוד
+        public static DeliveryEntities getDeliveryById(int id)
+        {
+            return DeliveryEntities.ConvertToEntities(DeliveyDal.getDeliveryById(id));
+        }
+        //עדכון
+        public static void updateDelivery(DeliveryEntities d)
+        {
+            DeliveyDal.updateDelivery(DeliveryEntities.ConvertToDB(d));
+        }
 
     }
 }
