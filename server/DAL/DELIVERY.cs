@@ -17,11 +17,11 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DELIVERY()
         {
-            this.ROUTE1 = new HashSet<ROUTE>();
+            this.ORDER = new HashSet<ORDER>();
+            this.ROUTE = new HashSet<ROUTE>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> ROUTE_ID { get; set; }
         public Nullable<bool> STATUS_D { get; set; }
         public string F_NAME { get; set; }
         public string L_NAME { get; set; }
@@ -30,9 +30,10 @@ namespace DAL
         public string EMAIL { get; set; }
         public Nullable<int> ID_USER { get; set; }
     
-        public virtual ROUTE ROUTE { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ROUTE> ROUTE1 { get; set; }
         public virtual USER USER { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDER> ORDER { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ROUTE> ROUTE { get; set; }
     }
 }

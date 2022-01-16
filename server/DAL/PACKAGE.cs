@@ -16,6 +16,5 @@ namespace DAL
     {
         public int ID { get; set; }
         public Nullable<System.Guid> NUMBER { get; set; }
-        public Nullable<int> ORDERID { get; set; }
     }
 }

@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    class CustomerEntities
+   public class CustomerEntities
     {
         public int id { get; set; }
-        public int? order_id { get; set; }
         public int? user_id { get; set; }
         public string f_name { get; set; }//לבדוק אם צריך לעשות שוב את החיבור
         public string l_name { get; set; }
@@ -24,7 +23,6 @@ namespace Entities
             return new CustomerEntities()
             {
                 id = c.ID,
-                order_id = c.ORDER_ID,
                 user_id = c.USERID,
                 f_name = c.F_NAME,
                 l_name=c.L_NAME,
@@ -40,7 +38,6 @@ namespace Entities
             return new CUSTOMER()
             {
                 ID=c.id,
-                ORDER_ID=c.order_id,
                 USERID=c.user_id,
                 F_NAME=c.f_name,
                 L_NAME=c.l_name,

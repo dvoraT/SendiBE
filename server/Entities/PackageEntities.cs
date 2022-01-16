@@ -11,7 +11,7 @@ namespace Entities
     {
         public int id { get; set; }
         public Guid? number { get; set; }
-        public int? order_id { get; set; }
+        //public int? order_id { get; set; }
 
 
         //המרה מאוביקט מסוג מסד נתונים לאוביקט מסוג אנטייז
@@ -21,7 +21,7 @@ namespace Entities
             {
                 id = p.ID,
                 number = p.NUMBER,
-                order_id = p.ORDERID
+                //order_id = p.ORDERID
             };
         }
         //המרה מסוג אנטיטיז לסוג מסד נתונים
@@ -31,7 +31,7 @@ namespace Entities
             {
                 ID=p.id,
                 NUMBER=p.number,
-                ORDERID=p.order_id
+                //ORDERID=p.order_id
             };
 
         }

@@ -10,7 +10,7 @@ namespace DAL
 
     public class DeliveyDal
     {
-        public static SENDITEntities db = new SENDITEntities();
+        public static SENDIT1Entities db = new SENDIT1Entities();
        // שליפת שליחים של היוזר הנוכחי
         public static List<DELIVERY> getDeliveriesByUserId(int userId)
         {
@@ -52,6 +52,12 @@ namespace DAL
         public static DELIVERY getDeliveryById(int id)
         {
             return db.DELIVERY.FirstOrDefault(x => x.ID == id);
+        }
+
+
+        public static List<DELIVERY> getAll()
+        {
+            return db.DELIVERY.ToList();
         }
     }
 }

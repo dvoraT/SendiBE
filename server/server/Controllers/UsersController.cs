@@ -54,6 +54,21 @@ namespace server.Controllers
             return Ok(UserBL.getDetails(userID));
         }
 
+        [HttpPost]
+        [Route("edit")]
+        public IHttpActionResult edit(UserEntities u)
+        {
+            try
+            {
+                UserBL.edit(u);
+                return Ok(true);
+            }
+            catch
+            {
+                return Ok(false);
+            }
+        }
+
 
     }
 

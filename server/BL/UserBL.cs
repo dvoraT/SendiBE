@@ -33,5 +33,11 @@ namespace BL
         {
             return UserEntities.ConvertToEntities(UserDAL.getDatails(userID));
         }
+
+        //עריכה
+        public static void edit(UserEntities u)
+        {
+            UserDAL.edit(UserEntities.ConvertToDB(u));
+        }
     }
 }

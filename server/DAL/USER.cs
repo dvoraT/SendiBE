@@ -19,10 +19,11 @@ namespace DAL
         {
             this.CUSTOMER = new HashSet<CUSTOMER>();
             this.DELIVERY = new HashSet<DELIVERY>();
+            this.ORDER = new HashSet<ORDER>();
+            this.ROUTE = new HashSet<ROUTE>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> ROUTE_ID { get; set; }
         public string USERNAME { get; set; }
         public string USER_PASSWORD { get; set; }
         public string NAME { get; set; }
@@ -32,8 +33,11 @@ namespace DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CUSTOMER> CUSTOMER { get; set; }
-        public virtual ROUTE ROUTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DELIVERY> DELIVERY { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDER> ORDER { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ROUTE> ROUTE { get; set; }
     }
 }

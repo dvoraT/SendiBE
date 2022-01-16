@@ -10,7 +10,7 @@ namespace Entities
   public class UserEntities
     {
         public int id { get; set; }
-        public int? route_id { get; set; }
+        //public int? route_id { get; set; }
         public string user_name { get; set; }
         public string user_password { get; set; }
         public string name { get; set; }
@@ -25,7 +25,7 @@ namespace Entities
             return new UserEntities()
             {
                 id = u.ID,
-                route_id = u.ROUTE_ID,
+                //route_id = u.ROUTE_ID,
                 user_name = u.USERNAME,
                 user_password = u.USER_PASSWORD,
                 name = u.NAME,
@@ -40,7 +40,7 @@ namespace Entities
             return new USER()
             {
                 ID = u.id,
-                ROUTE_ID=u.route_id,
+                //ROUTE_ID=u.route_id,
                 USERNAME=u.user_name,
                 USER_PASSWORD=u.user_password,
                 NAME=u.name,

@@ -78,5 +78,14 @@ namespace server.Controllers
                 return Ok(false);
             }
         }
+
+
+        [HttpGet]
+        [Route("isExist/{phoneNumber}")]
+        public IHttpActionResult isExist(string phoneNumber)
+        {
+            var d = DliveryBL.isExist(phoneNumber);
+            return Ok(d);
+        }
     }
 }

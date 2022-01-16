@@ -17,21 +17,19 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CUSTOMER()
         {
-            this.ORDER1 = new HashSet<ORDER>();
+            this.ORDER = new HashSet<ORDER>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> ORDER_ID { get; set; }
-        public Nullable<int> USERID { get; set; }
+        public string L_NAME { get; set; }
+        public string F_NAME { get; set; }
         public string ADRESS { get; set; }
         public string PHONE { get; set; }
         public string EMAIL { get; set; }
-        public string F_NAME { get; set; }
-        public string L_NAME { get; set; }
+        public Nullable<int> USERID { get; set; }
     
-        public virtual ORDER ORDER { get; set; }
         public virtual USER USER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDER> ORDER1 { get; set; }
+        public virtual ICollection<ORDER> ORDER { get; set; }
     }
 }

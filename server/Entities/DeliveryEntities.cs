@@ -10,7 +10,6 @@ namespace Entities
    public class DeliveryEntities
     {
         public int id { get; set; }
-        public int? route_id { get; set; }
         public int? user_id { get; set; }
         public bool? status_d { get; set; }
         public string f_name { get; set; }
@@ -27,7 +26,6 @@ namespace Entities
             return new DeliveryEntities()
             {
                 id = d.ID,
-                route_id = d.ROUTE_ID,
                 user_id=d.ID_USER,
                 status_d = d.STATUS_D,
                 f_name = d.F_NAME,
@@ -45,7 +43,6 @@ namespace Entities
             return new DELIVERY()
             {
                 ID = d.id,
-                ROUTE_ID = d.route_id,
                 ID_USER=d.user_id,
                 STATUS_D = d.status_d,
                 F_NAME = d.f_name,

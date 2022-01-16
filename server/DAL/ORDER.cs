@@ -14,27 +14,20 @@ namespace DAL
     
     public partial class ORDER
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ORDER()
-        {
-            this.CUSTOMER = new HashSet<CUSTOMER>();
-            this.ROUTE2 = new HashSet<ROUTE>();
-        }
-    
         public int ID { get; set; }
-        public Nullable<System.Guid> PACKAGE_NUMBER { get; set; }
+        public Nullable<System.Guid> ORDER_NUMBER { get; set; }
         public Nullable<int> ORDER_STATUS { get; set; }
         public Nullable<int> BOXES_AMOUNT { get; set; }
         public Nullable<System.DateTime> DEADLINE_DATE { get; set; }
         public Nullable<int> CUSTOMER_ID { get; set; }
         public Nullable<int> ROUTE_ID { get; set; }
+        public Nullable<int> ID_DELIVERY { get; set; }
+        public Nullable<int> ID_USER { get; set; }
+        public Nullable<System.DateTime> CREATION_DATE { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CUSTOMER> CUSTOMER { get; set; }
-        public virtual CUSTOMER CUSTOMER1 { get; set; }
+        public virtual CUSTOMER CUSTOMER { get; set; }
+        public virtual DELIVERY DELIVERY { get; set; }
+        public virtual USER USER { get; set; }
         public virtual ROUTE ROUTE { get; set; }
-        public virtual ROUTE ROUTE1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ROUTE> ROUTE2 { get; set; }
     }
 }

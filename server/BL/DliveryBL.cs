@@ -37,5 +37,12 @@ namespace BL
             DeliveyDal.updateDelivery(DeliveryEntities.ConvertToDB(d));
         }
 
+
+        public static DeliveryEntities isExist(string phoneNumber)
+        {
+            List<DeliveryEntities> dl = DeliveryEntities.ConvertToListEntities(DeliveyDal.getAll());
+            return dl.FirstOrDefault(d => d.phone == phoneNumber);
+        }
+
     }
 }

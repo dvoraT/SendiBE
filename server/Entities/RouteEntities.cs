@@ -10,7 +10,8 @@ namespace Entities
     class RouteEntities
     {
         public int id { get; set; }
-        public int? order_id { get; set; }
+       // public int? order_id { get; set; }
+       public int? user_id { get; set; }
         public int? delivery_id { get; set; }
 
 
@@ -20,7 +21,8 @@ namespace Entities
             return new RouteEntities()
             {
             id=r.ID,
-            order_id=r.ORDER_ID,
+           // order_id=r.ORDER_ID,
+           user_id=r.ID_USER,
             delivery_id=r.DELIVERY_ID
             };
 
@@ -32,7 +34,8 @@ namespace Entities
             return new ROUTE()
             {
                 ID = r.id,
-                ORDER_ID=r.order_id,
+               // ORDER_ID=r.order_id,
+               ID_USER=r.user_id,
                 DELIVERY_ID=r.delivery_id
             };
 

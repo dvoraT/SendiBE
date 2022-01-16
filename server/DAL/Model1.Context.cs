@@ -13,10 +13,10 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SENDITEntities : DbContext
+    public partial class SENDIT1Entities : DbContext
     {
-        public SENDITEntities()
-            : base("name=SENDITEntities")
+        public SENDIT1Entities()
+            : base("name=SENDIT1Entities")
         {
         }
     

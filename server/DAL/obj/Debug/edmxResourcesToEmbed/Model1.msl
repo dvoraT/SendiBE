@@ -1,71 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SENDITModelStoreContainer" CdmEntityContainer="SENDITEntities">
+  <EntityContainerMapping StorageEntityContainer="SENDIT1ModelStoreContainer" CdmEntityContainer="SENDIT1Entities">
     <EntitySetMapping Name="CUSTOMER">
-      <EntityTypeMapping TypeName="SENDITModel.CUSTOMER">
+      <EntityTypeMapping TypeName="SENDIT1Model.CUSTOMER">
         <MappingFragment StoreEntitySet="CUSTOMER">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
-          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="L_NAME" ColumnName="L_NAME" />
+          <ScalarProperty Name="F_NAME" ColumnName="F_NAME" />
           <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
           <ScalarProperty Name="PHONE" ColumnName="PHONE" />
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-          <ScalarProperty Name="F_NAME" ColumnName="F_NAME" />
-          <ScalarProperty Name="L_NAME" ColumnName="L_NAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DELIVERY">
-      <EntityTypeMapping TypeName="SENDITModel.DELIVERY">
+      <EntityTypeMapping TypeName="SENDIT1Model.DELIVERY">
         <MappingFragment StoreEntitySet="DELIVERY">
-          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
           <ScalarProperty Name="STATUS_D" ColumnName="STATUS_D" />
           <ScalarProperty Name="F_NAME" ColumnName="F_NAME" />
           <ScalarProperty Name="L_NAME" ColumnName="L_NAME" />
           <ScalarProperty Name="PHONE" ColumnName="PHONE" />
           <ScalarProperty Name="NUM_HOURS" ColumnName="NUM_HOURS" />
           <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ORDER">
-      <EntityTypeMapping TypeName="SENDITModel.ORDER">
+      <EntityTypeMapping TypeName="SENDIT1Model.ORDER">
         <MappingFragment StoreEntitySet="ORDER">
+          <ScalarProperty Name="CREATION_DATE" ColumnName="CREATION_DATE" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="PACKAGE_NUMBER" ColumnName="PACKAGE_NUMBER" />
+          <ScalarProperty Name="ORDER_NUMBER" ColumnName="ORDER_NUMBER" />
           <ScalarProperty Name="ORDER_STATUS" ColumnName="ORDER_STATUS" />
           <ScalarProperty Name="BOXES_AMOUNT" ColumnName="BOXES_AMOUNT" />
           <ScalarProperty Name="DEADLINE_DATE" ColumnName="DEADLINE_DATE" />
           <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
           <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+          <ScalarProperty Name="ID_DELIVERY" ColumnName="ID_DELIVERY" />
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PACKAGE">
-      <EntityTypeMapping TypeName="SENDITModel.PACKAGE">
+      <EntityTypeMapping TypeName="SENDIT1Model.PACKAGE">
         <MappingFragment StoreEntitySet="PACKAGE">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
-          <ScalarProperty Name="ORDERID" ColumnName="ORDERID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ROUTE">
-      <EntityTypeMapping TypeName="SENDITModel.ROUTE">
+      <EntityTypeMapping TypeName="SENDIT1Model.ROUTE">
         <MappingFragment StoreEntitySet="ROUTE">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
           <ScalarProperty Name="DELIVERY_ID" ColumnName="DELIVERY_ID" />
+          <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="USER">
-      <EntityTypeMapping TypeName="SENDITModel.USER">
+      <EntityTypeMapping TypeName="SENDIT1Model.USER">
         <MappingFragment StoreEntitySet="USER">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
           <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
           <ScalarProperty Name="NAME" ColumnName="NAME" />

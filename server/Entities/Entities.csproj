@@ -41,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="CustomerEntities.cs" />
     <Compile Include="DeliveryEntities.cs" />
+    <Compile Include="orderEntities.cs" />
     <Compile Include="PackageEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteEntities.cs" />

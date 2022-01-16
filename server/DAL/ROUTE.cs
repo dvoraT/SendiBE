@@ -17,23 +17,16 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ROUTE()
         {
-            this.DELIVERY = new HashSet<DELIVERY>();
-            this.ORDER1 = new HashSet<ORDER>();
-            this.USER = new HashSet<USER>();
+            this.ORDER = new HashSet<ORDER>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> ORDER_ID { get; set; }
         public Nullable<int> DELIVERY_ID { get; set; }
+        public Nullable<int> ID_USER { get; set; }
     
+        public virtual DELIVERY DELIVERY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DELIVERY> DELIVERY { get; set; }
-        public virtual DELIVERY DELIVERY1 { get; set; }
-        public virtual ORDER ORDER { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ORDER> ORDER1 { get; set; }
-        public virtual ORDER ORDER2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<USER> USER { get; set; }
+        public virtual ICollection<ORDER> ORDER { get; set; }
+        public virtual USER USER { get; set; }
     }
 }

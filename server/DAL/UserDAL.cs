@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DAL
 {
    public class UserDAL
     {
-        public static SENDITEntities db = new SENDITEntities();
+        public static SENDIT1Entities db = new SENDIT1Entities();
         int i = 0;
 
         public static void addUser(USER u)
@@ -37,6 +38,18 @@ namespace DAL
             return db.USER.FirstOrDefault(u => u.ID == userID);
         }
 
+        //עריכה
+        public static void edit(USER u)
+        {
+            db.USER.FirstOrDefault(x => x.ID == u.ID).USERNAME = u.USERNAME;
+            db.USER.FirstOrDefault(x => x.ID == u.ID).USER_PASSWORD = u.USER_PASSWORD;
+            db.USER.FirstOrDefault(x => x.ID == u.ID).NAME = u.NAME;
+            db.USER.FirstOrDefault(x => x.ID == u.ID).ADRESS = u.ADRESS;
+            db.USER.FirstOrDefault(x => x.ID == u.ID).PHONE = u.PHONE;
+            db.USER.FirstOrDefault(x => x.ID == u.ID).EMAIL = u.EMAIL;
+
+
+        }
        
     }
 }
